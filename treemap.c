@@ -90,8 +90,9 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
       {
         current = current->right;
       }
-      else
+      if(comp == 0)
       {
+        
         return current->pair;
       }
     }
