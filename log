@@ -2,3 +2,24 @@ Thu 14 Sep 2023 04:58:19 PM UTC:
  tests:  1|8
 total_score: 0/70
 d9b30b0
+Thu 14 Sep 2023 05:35:13 PM UTC: 
+ treemap.c | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:45:8: error: ‘TreeNode’ has no member named ‘root’
+   45 |     new->root = NULL;
+      |        ^~
+treemap.c:46:8: error: ‘TreeNode’ has no member named ‘lower_than’
+   46 |     new->lower_than = lower_than;
+      |        ^~
+treemap.c:47:10: error: ‘map’ undeclared (first use in this function)
+   47 |   return map;
+      |          ^~~
+treemap.c:47:10: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:48:1: error: control reaches end of non-void function [-Werror=return-type]
+   48 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+d077ada
