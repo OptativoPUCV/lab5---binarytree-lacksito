@@ -84,11 +84,11 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
       int comp = tree->lower_than(current->pair->key, key);
       if (comp > 0) 
       {
-        current = current->left;
+        current = current->right;
       }
       else if (comp < 0)
       {
-        current = current->right;
+        current = current->left;
       }
       else
       {
@@ -96,6 +96,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
         return current->pair;
       }
     }
+  tree->current = NULL;
   return NULL;
 }
 
