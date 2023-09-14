@@ -92,9 +92,13 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
       }
       else
       {
+        if(is_equal(current->pair->key,key == 1)
+        {
+          tree->current = current;
+          return current->pair;
+        }
         tree->current = current;
         return current->pair;
-        printf("soy gei");
       }
     }
   tree->current = NULL;

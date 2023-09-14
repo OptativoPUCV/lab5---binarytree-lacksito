@@ -181,3 +181,37 @@ Thu 14 Sep 2023 06:07:13 PM UTC:
  tests:  8|7
 total_score: 5/70
 fb2a861
+Thu 14 Sep 2023 06:11:27 PM UTC: 
+ treemap.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:95:44: error: comparison between pointer and integer [-Werror]
+   95 |         if(is_equal(current->pair->key,key == 1)
+      |                                            ^~
+treemap.c:95:44: error: passing argument 2 of ‘is_equal’ makes pointer from integer without a cast [-Werror=int-conversion]
+   95 |         if(is_equal(current->pair->key,key == 1)
+      |                                        ~~~~^~~~
+      |                                            |
+      |                                            int
+treemap.c:22:35: note: expected ‘void *’ but argument is of type ‘int’
+   22 | int is_equal(TreeMap* tree, void* key1, void* key2){
+      |                             ~~~~~~^~~~
+treemap.c:95:12: error: too few arguments to function ‘is_equal’
+   95 |         if(is_equal(current->pair->key,key == 1)
+      |            ^~~~~~~~
+treemap.c:22:5: note: declared here
+   22 | int is_equal(TreeMap* tree, void* key1, void* key2){
+      |     ^~~~~~~~
+treemap.c:95:49: error: expected ‘)’ before ‘{’ token
+   95 |         if(is_equal(current->pair->key,key == 1)
+      |           ~                                     ^
+      |                                                 )
+   96 |         {
+      |         ~                                        
+treemap.c:102:7: error: expected expression before ‘}’ token
+  102 |       }
+      |       ^
+cc1: all warnings being treated as errors
+Compilation failed
+307a4ee
