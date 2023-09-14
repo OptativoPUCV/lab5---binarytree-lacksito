@@ -94,6 +94,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
       {
         tree->current = current;
         return current->pair;
+        printf("soy gei");
       }
     }
   tree->current = NULL;
