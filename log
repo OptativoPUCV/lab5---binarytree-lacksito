@@ -276,3 +276,12 @@ test.c:503:5: error: ‘main’ defined but not used [-Werror=unused-function]
 cc1: all warnings being treated as errors
 Compilation failed
 31f5b2b
+Thu 14 Sep 2023 06:20:58 PM UTC: 
+ treemap.c | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c:101:1: error: expected identifier or ‘(’ before ‘}’ token
+  101 | }
+      | ^
+Compilation failed
+b2c4228
