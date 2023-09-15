@@ -88,6 +88,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
     {
       tree->current = current;
       return current->pair;
+      printf("\n pase aqui\n");
     }
     else 
     {
