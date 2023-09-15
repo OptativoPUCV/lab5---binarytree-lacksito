@@ -113,14 +113,14 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
   TreeNode* vigente = tree->root;
   while (vigente != NULL) 
   {
-
+    //tuve un error al asignar una variable a tree->lower_than(key, vigente->pair->key)
     if(tree->lower_than(key, vigente->pair->key) == 1)
     {
       vigente = vigente->left;
     }
     else if (is_equal(tree, vigente->pair->key, key))
     {
-      printf("\n pase aqui");
+      printf("\n pase aqui\n");
       tree->current = vigente;
       return vigente->pair;
     }
