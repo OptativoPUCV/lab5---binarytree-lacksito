@@ -625,3 +625,14 @@ treemap.c:52:15: error: variable ‘son’ set but not used [-Werror=unused-but-
 cc1: all warnings being treated as errors
 Compilation failed
 761dc7e
+Fri 15 Sep 2023 11:31:52 PM UTC: 
+ treemap.c | 23 ++---------------------
+ 1 file changed, 2 insertions(+), 21 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:53:15: error: variable ‘son’ set but not used [-Werror=unused-but-set-variable]
+   53 |     TreeNode* son = NULL;
+      |               ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+04f5921
