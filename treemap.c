@@ -119,7 +119,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
     {
       current = current->left;
     }
-    else if (is_equal(tree, actual->pair->key, key))
+    else if (is_equal(tree, current->pair->key, key))
     {
       printf("\n pase aqui");
       tree->current = current;
