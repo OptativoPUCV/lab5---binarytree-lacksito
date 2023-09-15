@@ -86,9 +86,14 @@ void insertTreeMap(TreeMap* tree, void* key, void* value) {
 }
 
 
-TreeNode * minimum(TreeNode * x){
-
-    return NULL;
+TreeNode * minimum(TreeNode * x)
+{
+  if (x == NULL) return NULL;
+  while( x->left != NULL)
+    {
+      x = x->left;
+    }
+  return x;
 }
 
 
@@ -114,7 +119,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
   while (vigente != NULL) 
   {
     //tuve un error al asignar una variable a tree->lower_than(key, vigente->pair->key)
-    if(tree->lower_than(key, vigente->pair->key) == 1)
+    if(tree->lower_than(key, vigente->pair->key) > 0 )
     {
       vigente = vigente->left;
     }
