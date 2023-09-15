@@ -61,11 +61,11 @@ void insertTreeMap(TreeMap* tree, void* key, void* value) {
       } 
       else if (tree->lower_than(key, actual->pair->key) < 0) 
       {
-        current = current->left;
+        vigente = vigente->left;
       } 
       else 
       {
-        current = current->right;
+        vigente = vigente->right;
       }
     }
 

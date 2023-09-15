@@ -553,3 +553,30 @@ treemap.c:52:15: error: variable ‘son’ set but not used [-Werror=unused-but-
 cc1: all warnings being treated as errors
 Compilation failed
 aa94551
+Fri 15 Sep 2023 11:28:44 PM UTC: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:58:50: error: expected ‘)’ before ‘{’ token
+   58 |       if (is_equal(tree, key, vigente->pair->key)
+      |          ~                                       ^
+      |                                                  )
+   59 |       {
+      |       ~                                           
+treemap.c:70:5: error: expected expression before ‘}’ token
+   70 |     }
+      |     ^
+treemap.c:75:9: error: ‘parent’ undeclared (first use in this function)
+   75 |     if (parent == NULL) {
+      |         ^~~~~~
+treemap.c:75:9: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:80:13: error: ‘comp’ undeclared (first use in this function)
+   80 |         if (comp < 0) {
+      |             ^~~~
+treemap.c:52:15: error: variable ‘son’ set but not used [-Werror=unused-but-set-variable]
+   52 |     TreeNode* son = NULL;
+      |               ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+9a1b23d
