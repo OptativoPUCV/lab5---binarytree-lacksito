@@ -110,24 +110,24 @@ void eraseTreeMap(TreeMap * tree, void* key){
 
 Pair * searchTreeMap(TreeMap * tree, void* key) 
 {
-  TreeNode* current = tree->root;
-  while (current != NULL) 
+  TreeNode* vigente = tree->root;
+  while (vigente != NULL) 
   {
 
-    int comp = tree->lower_than(current->pair->key, key);
+    int comp = tree->lower_than(vigente->pair->key, key);
     if(comp == 1)
     {
-      current = current->left;
+      vigente = current->left;
     }
-    else if (is_equal(tree, current->pair->key, key))
+    else if (is_equal(tree, vigente->pair->key, key))
     {
       printf("\n pase aqui");
-      tree->current = current;
-      return current->pair;
+      tree->current = vigente;
+      return vigente->pair;
     }
     else 
     {
-      current = current->right;
+      vigente = vigente->right;
     }
   }
 
