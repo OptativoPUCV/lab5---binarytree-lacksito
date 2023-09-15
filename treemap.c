@@ -115,11 +115,11 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
   {
 
     int comp = tree->lower_than(current->pair->key, key);
-    if(comp < 0)
+    if(comp == 1)
     {
       current = current->left;
     }
-    else if (comp == 0)
+    else if (is_equal(tree, actual->pair->key, key))
     {
       printf("\n pase aqui");
       tree->current = current;
