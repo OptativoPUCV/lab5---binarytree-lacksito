@@ -496,3 +496,9 @@ treemap.c:117:30: error: ‘actual’ undeclared (first use in this function)
 treemap.c:117:30: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 635b413
+Fri 15 Sep 2023 11:13:40 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  11|6
+total_score: 15/70
+4d9bcc9

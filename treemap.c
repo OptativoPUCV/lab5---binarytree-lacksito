@@ -114,7 +114,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
   while (vigente != NULL) 
   {
 
-    if(tree->lower_than(key, actual->pair->key) == 1)
+    if(tree->lower_than(key, vigente->pair->key) == 1)
     {
       vigente = vigente->left;
     }
