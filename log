@@ -348,3 +348,9 @@ treemap.c:89:25: error: ‘TreeMap’ has no member named ‘lower_than_string�
       |                         ^~
 Compilation failed
 90a5f7d
+Fri 15 Sep 2023 09:34:53 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  8|7
+total_score: 5/70
+1552da6
