@@ -119,7 +119,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
   while (vigente != NULL) 
   {
     //tuve un error al asignar una variable a tree->lower_than(key, vigente->pair->key)
-    if(tree->lower_than(key, vigente->pair->key) > 0 )
+    if(tree->lower_than(key, vigente->pair->key) == 1 )
     {
       vigente = vigente->left;
     }
