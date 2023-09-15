@@ -470,3 +470,18 @@ Fri 15 Sep 2023 11:12:20 PM UTC:
  tests:  6|7
 total_score: 5/70
 11a12ea
+Fri 15 Sep 2023 11:13:23 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:118:30: error: ‘actual’ undeclared (first use in this function)
+  118 |     if(tree->lower_than(key, actual->pair->key) == 1)
+      |                              ^~~~~~
+treemap.c:118:30: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:117:9: error: unused variable ‘comp’ [-Werror=unused-variable]
+  117 |     int comp = tree->lower_than(vigente->pair->key, key);
+      |         ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+edb720e
