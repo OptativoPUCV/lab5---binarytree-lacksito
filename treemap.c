@@ -117,7 +117,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
     int comp = tree->lower_than(vigente->pair->key, key);
     if(comp == 1)
     {
-      vigente = current->left;
+      vigente = vigente->left;
     }
     else if (is_equal(tree, vigente->pair->key, key))
     {
