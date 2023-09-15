@@ -338,3 +338,13 @@ Thu 14 Sep 2023 06:45:23 PM UTC:
  tests:  8|7
 total_score: 5/70
 f1c3ad7
+Fri 15 Sep 2023 09:34:41 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘searchTreeMap’:
+treemap.c:89:25: error: ‘TreeMap’ has no member named ‘lower_than_string’
+   89 |          int comp = tree->lower_than_string(current->pair->key, key);
+      |                         ^~
+Compilation failed
+90a5f7d
