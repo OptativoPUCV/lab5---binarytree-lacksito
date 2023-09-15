@@ -83,7 +83,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
       {
         tree->current = current; 
         return current->pair;
-        printf("\n pase aqui").
+        printf("\n pase aqui");
       }
       else
       {
