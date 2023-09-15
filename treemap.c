@@ -58,7 +58,7 @@ void insertTreeMap(TreeMap* tree, void* key, void* value)
       {
         return;
       } 
-      else if (tree->lower_than(key, vigente->pair->key) > 0) 
+      else if (tree->lower_than(key, vigente->pair->key)) 
       {
         vigente = vigente->left;
       } 
