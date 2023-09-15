@@ -54,12 +54,11 @@ void insertTreeMap(TreeMap* tree, void* key, void* value) {
     while (vigente != NULL) 
     {
       son = vigente;
-
       if (is_equal(tree, key, vigente->pair->key) 
       {
         return;
       } 
-      else if (tree->lower_than(key, actual->pair->key) < 0) 
+      else if (tree->lower_than(key, vigente->pair->key) < 0) 
       {
         vigente = vigente->left;
       } 
