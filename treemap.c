@@ -194,7 +194,30 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
+  TreeNode* vigente = tree->root;
+  
+  TreeNode* ub = NULL;
+  
+  while (vigente != NULL) 
+  {
+    if (is_equal(tree, vigente->pair->key, key)) 
+    {
+      return vigente->pair;
+    } else if (tree->lower_than(key, vigente->pair->key)) {
+      ub = vigente;
+      vigente = vigente->left;
+    } else {
+      vigente = vigente->right;
+    }
+  }
+  
+  if (ub_node == NULL) 
+  {      
     return NULL;
+  } else {
+      return ub_node->pair;
+  }
+  
 }
 
 Pair* firstTreeMap(TreeMap* tree) 
