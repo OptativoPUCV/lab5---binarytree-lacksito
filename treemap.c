@@ -245,7 +245,7 @@ Pair* nextTreeMap(TreeMap* tree)
     
   if (sucesor != NULL) 
   {
-    return successor->pair;
+    return sucesor->pair;
   } 
   else 
   {
