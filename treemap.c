@@ -197,45 +197,58 @@ Pair * upperBound(TreeMap * tree, void* key) {
     return NULL;
 }
 
-Pair* firstTreeMap(TreeMap* tree) {
-    TreeNode* current = tree->root;
-    if (current == NULL) {
-        return NULL; 
-    }
-    while (current->left != NULL) {
-        current = current->left;
-    }
-    tree->current = current;
-    return current->pair;
+Pair* firstTreeMap(TreeMap* tree) 
+{
+  TreeNode* vigente = tree->root;
+  if (vigente == NULL) 
+  {
+    return NULL; 
+  }
+  while (vigente->left != NULL) 
+  {
+    vigente = vigente->left;
+  }
+  tree->current = vigente;
+  return vigente->pair;
 }
 
-Pair* nextTreeMap(TreeMap* tree) {
-    if (tree->current == NULL) {
-        return NULL; 
+Pair* nextTreeMap(TreeMap* tree) 
+{
+  if (tree->current == NULL) 
+  {
+    return NULL; 
+  }
+
+  TreeNode* vigente = tree->current;
+  TreeNode* sucesor = NULL;
+
+  if (vigente->right != NULL) 
+  {
+    sucesor = vigente->right;
+    while (sucesor->left != NULL) 
+    {
+      sucesor = sucesor->left;
     }
-
-    TreeNode* current = tree->current;
-    TreeNode* successor = NULL;
-
-    if (current->right != NULL) {
-        successor = current->right;
-        while (successor->left != NULL) {
-            successor = successor->left;
-        }
-    } else {
-        TreeNode* parent = current->parent;
-        while (parent != NULL && current == parent->right) {
-            current = parent;
-            parent = parent->parent;
-        }
-        successor = parent;
+  } 
+  else 
+  {
+    TreeNode* padre = vigente->parent;
+    while (padre != NULL && vigente == padre->right) 
+    {
+      vigente = padre;
+      padre = padre->parent;
     }
+    sucesor = padre;
+  }
 
-    tree->current = successor;
+  tree->current = sucesor;
     
-    if (successor != NULL) {
-        return successor->pair;
-    } else {
-        return NULL; 
-    }
+  if (sucesor != NULL) 
+  {
+    return successor->pair;
+  } 
+  else 
+  {
+    return NULL; 
+  }
 }

@@ -833,3 +833,19 @@ Sat 16 Sep 2023 12:10:42 AM UTC:
  tests:  25|1
 total_score: 60/70
 6bb6daa
+Sat 16 Sep 2023 12:16:29 AM UTC: 
+ treemap.c | 61 +++++++++++++++++++++++++++++++++++++------------------------
+ 1 file changed, 37 insertions(+), 24 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘nextTreeMap’:
+treemap.c:248:12: error: ‘successor’ undeclared (first use in this function); did you mean ‘sucesor’?
+  248 |     return successor->pair;
+      |            ^~~~~~~~~
+      |            sucesor
+treemap.c:248:12: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:254:1: error: control reaches end of non-void function [-Werror=return-type]
+  254 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+0764f98
