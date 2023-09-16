@@ -122,33 +122,33 @@ void removeNode(TreeMap * tree, TreeNode* node)
     
     if (node->left == NULL || node->right == NULL) 
     {
-        TreeNode* child = (node->left != NULL) ? node->left : node->right;
+      TreeNode* son = (node->left != NULL) ? node->left : node->right;
 
-        if (node->parent != NULL) 
+      if (node->parent != NULL) 
+      {
+        if (node == node->parent->left) 
         {
-          if (node == node->parent->left) 
-          {
-            node->parent->left = child;
-          } 
-          else 
-          {
-            node->parent->right = child;
-          }
+          node->parent->left = son;
         } 
         else 
         {
-        tree->root = child; 
+          node->parent->right = son;
         }
+      } 
+       else         
+      {
+      tree->root = son; 
+      }
 
-        child->parent = node->parent;
-        free(node);
+      son->parent = node->parent;
+      free(node);
         return;
-    }
+  }
 
     
-    TreeNode* minRight = minimum(node->right);
-    node->pair = minRight->pair;
-    removeNode(tree, minRight);
+  TreeNode* minDer = minimum(node->right);
+  node->pair = minDer->pair;
+  removeNode(tree, minDer);
 }
 
 
@@ -197,10 +197,45 @@ Pair * upperBound(TreeMap * tree, void* key) {
     return NULL;
 }
 
-Pair * firstTreeMap(TreeMap * tree) {
-    return NULL;
+Pair* firstTreeMap(TreeMap* tree) {
+    TreeNode* current = tree->root;
+    if (current == NULL) {
+        return NULL; 
+    }
+    while (current->left != NULL) {
+        current = current->left;
+    }
+    tree->current = current;
+    return current->pair;
 }
 
-Pair * nextTreeMap(TreeMap * tree) {
-    return NULL;
+Pair* nextTreeMap(TreeMap* tree) {
+    if (tree->current == NULL) {
+        return NULL; 
+    }
+
+    TreeNode* current = tree->current;
+    TreeNode* successor = NULL;
+
+    if (current->right != NULL) {
+        successor = current->right;
+        while (successor->left != NULL) {
+            successor = successor->left;
+        }
+    } else {
+        TreeNode* parent = current->parent;
+        while (parent != NULL && current == parent->right) {
+            current = parent;
+            parent = parent->parent;
+        }
+        successor = parent;
+    }
+
+    tree->current = successor;
+    
+    if (successor != NULL) {
+        return successor->pair;
+    } else {
+        return NULL; 
+    }
 }
